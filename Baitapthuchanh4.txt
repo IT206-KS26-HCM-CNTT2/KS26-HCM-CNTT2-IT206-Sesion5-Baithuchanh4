@@ -1,0 +1,81 @@
+PHÂN TÍCH KẾT QUẢ HỌC TẬP SINH VIÊN BẰNG KỸ THUẬT CHAIN OF THOUGHT
+
+1. PROMPT HOÀN CHỈNH (ỨNG DỤNG CHAIN OF THOUGHT)
+
+Bạn là Chuyên gia Phân tích Dữ liệu Giáo dục. Hãy phân tích bảng điểm kiểm tra môn lập trình trong 3 tuần của 5 sinh viên dưới đây:
+
+An: Tuần 1 = 8, Tuần 2 = 7, Tuần 3 = 5
+
+Bình: Tuần 1 = 7, Tuần 2 = 6, Tuần 3 = 4
+
+Chi: Tuần 1 = 9, Tuần 2 = 8, Tuần 3 = 8
+
+Dũng: Tuần 1 = 6, Tuần 2 = 5, Tuần 3 = 3
+
+Hà: Tuần 1 = 8, Tuần 2 = 8, Tuần 3 = 7
+
+Yêu cầu kỹ thuật bắt buộc:
+
+Sử dụng tư duy Chain of Thought, thực hiện tuần tự qua 4 bước: Tính toán, So sánh, Nhận định, Đề xuất.
+
+Chỉ sử dụng dữ liệu được cung cấp bên trên. Tuyệt đối không tự suy diễn nguyên nhân bên ngoài khiến sinh viên giảm điểm.
+
+Mọi nhận định đều phải đi kèm số liệu chứng minh cụ thể.
+
+Hãy trình bày đầu ra gồm:
+
+1. Bảng tính toán mức chênh lệch điểm (Tuần 1 sang 2, Tuần 2 sang 3, tổng 3 tuần) và điểm trung bình của từng sinh viên.
+
+2. Xác định nhóm sinh viên có dấu hiệu sa sút.
+
+3. Rút ra 3 nhận định quan trọng từ dữ liệu và liệt kê các vấn đề giảng viên cần xác minh thêm.
+
+4. Đề xuất 3 giải pháp hỗ trợ học tập cụ thể.
+
+2. BÁO CÁO PHÂN TÍCH THEO TỪNG BƯỚC
+
+Bước 1: Tính toán dữ liệu (Bảng phân tích kết quả của 5 sinh viên)
+
+Sinh viên An: Tuần 1 = 8 | Tuần 2 = 7 | Tuần 3 = 5 | Chênh lệch T1 sang T2: giảm 1 | Chênh lệch T2 sang T3: giảm 2 | Tổng chênh lệch: giảm 3 | Điểm trung bình: 6.67
+
+Sinh viên Bình: Tuần 1 = 7 | Tuần 2 = 6 | Tuần 3 = 4 | Chênh lệch T1 sang T2: giảm 1 | Chênh lệch T2 sang T3: giảm 2 | Tổng chênh lệch: giảm 3 | Điểm trung bình: 5.67
+
+Sinh viên Chi: Tuần 1 = 9 | Tuần 2 = 8 | Tuần 3 = 8 | Chênh lệch T1 sang T2: giảm 1 | Chênh lệch T2 sang T3: không đổi (0) | Tổng chênh lệch: giảm 1 | Điểm trung bình: 8.33
+
+Sinh viên Dũng: Tuần 1 = 6 | Tuần 2 = 5 | Tuần 3 = 3 | Chênh lệch T1 sang T2: giảm 1 | Chênh lệch T2 sang T3: giảm 2 | Tổng chênh lệch: giảm 3 | Điểm trung bình: 4.67
+
+Sinh viên Hà: Tuần 1 = 8 | Tuần 2 = 8 | Tuần 3 = 7 | Chênh lệch T1 sang T2: không đổi (0) | Chênh lệch T2 sang T3: giảm 1 | Tổng chênh lệch: giảm 1 | Điểm trung bình: 7.67
+
+Trung bình cả lớp: Tuần 1 = 7.6 | Tuần 2 = 6.8 | Tuần 3 = 5.4 | Chênh lệch T1 sang T2: giảm 0.8 | Chênh lệch T2 sang T3: giảm 1.4 | Tổng chênh lệch: giảm 2.2 | Điểm trung bình chung: 6.60
+
+Bước 2: So sánh và xác định nhóm sinh viên có dấu hiệu sa sút
+
+Nhóm có dấu hiệu sa sút rõ rệt (An, Bình, Dũng): Cả 3 sinh viên này đều có chuỗi giảm điểm liên tục qua cả 3 tuần với tổng mức giảm bằng nhau là 3 điểm (giảm 1 điểm ở Tuần 2 và giảm sâu thêm 2 điểm ở Tuần 3). Trong đó, Dũng là trường hợp báo động nhất khi điểm Tuần 3 chạm mức 3 điểm (thấp nhất lớp) và điểm trung bình dưới mức trung bình (4.67).
+
+Nhóm duy trì phong độ tương đối ổn định (Chi, Hà): Cả 2 chỉ giảm nhẹ 1 điểm sau 3 tuần. Chi dẫn đầu lớp ở cả 3 tuần (điểm trung bình 8.33) và giữ nguyên phong độ từ Tuần 2 sang Tuần 3 (từ 8 giữ nguyên 8). Hà giữ vững phong độ 2 tuần đầu (từ 8 giữ nguyên 8) và chỉ giảm nhẹ ở Tuần 3 (xuống 7), đạt điểm trung bình 7.67.
+
+Bước 3: Nhận định dữ liệu và Các vấn đề cần xác minh
+
+Ba nhận định quan trọng từ dữ liệu:
+
+1. Xu hướng giảm điểm mang tính diện rộng toàn lớp: Không có sinh viên nào tăng điểm trong suốt 3 tuần. Điểm trung bình chung của cả nhóm giảm từ 7.6 (Tuần 1) xuống 6.8 (Tuần 2) và còn 5.4 (Tuần 3).
+
+2. Mức độ sụt giảm tăng tốc ở Tuần 3: Giai đoạn từ Tuần 1 sang Tuần 2, mức giảm trung bình chỉ là 0.8 điểm (4/5 sinh viên giảm 1 điểm). Tuy nhiên, từ Tuần 2 sang Tuần 3, mức giảm trung bình tăng gần gấp đôi lên 1.4 điểm, với 3/5 sinh viên (An, Bình, Dũng) cùng giảm mạnh 2 điểm.
+
+3. Sự phân hóa trình độ ngày càng nới rộng: Khoảng cách điểm giữa người cao nhất và thấp nhất ở Tuần 1 là 3 điểm (Chi: 9 so với Dũng: 6), nhưng đến Tuần 3 khoảng cách này đã nới rộng lên thành 5 điểm (Chi: 8 so với Dũng: 3).
+
+Các vấn đề giảng viên cần xác minh thêm (do dữ liệu chưa thể hiện):
+
+Mức độ khó của nội dung kiến thức và đề kiểm tra qua từng tuần (đặc biệt là sự nhảy vọt độ khó ở Tuần 3).
+
+Tỷ lệ chuyên cần, mức độ tham gia thực hành trên lớp và tình trạng nộp bài tập của từng sinh viên (nhất là An, Bình, Dũng).
+
+Các yếu tố cá nhân hoặc rào cản kỹ thuật (thiết bị học tập, sức khỏe, tâm lý) mà sinh viên đang gặp phải.
+
+Bước 4: Đề xuất 3 giải pháp hỗ trợ học tập cụ thể
+
+1. Tổ chức phụ đạo khẩn cấp cho nhóm sa sút (An, Bình, Dũng): Mở các buổi hướng dẫn bổ sung (1 kèm 1 hoặc nhóm nhỏ) tập trung ôn lại kiến thức nền tảng của Tuần 2 và Tuần 3, giúp Dũng kéo điểm thoát khỏi vùng nguy hiểm (3 điểm) và giúp An, Bình lấy lại phong độ ban đầu (7 đến 8 điểm).
+
+2. Triển khai mô hình Đôi bạn cùng tiến: Phân công 2 sinh viên giữ phong độ tốt nhất là Chi (điểm trung bình 8.33) và Hà (điểm trung bình 7.67) làm nhóm trưởng hỗ trợ giải đáp bài tập lập trình trực tiếp cho nhóm An, Bình, Dũng trong các giờ thực hành.
+
+3. Rà soát lại lộ trình bài giảng và cấu trúc đề kiểm tra Tuần 3: Giảng viên cần đối chiếu lại độ khó của đề kiểm tra Tuần 3 (nơi khiến 4/5 sinh viên bị giảm điểm) để điều chỉnh tốc độ giảng dạy, bổ sung bài tập mẫu trước khi kiểm tra nhằm tránh tình trạng sinh viên bị ngợp kiến thức.
